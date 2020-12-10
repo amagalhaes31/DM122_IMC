@@ -2,10 +2,10 @@ import Dexie from "https://cdn.jsdelivr.net/npm/dexie@3.0.3/dist/dexie.mjs";
 
 let db;
 
-export default class ImcService {
+export default class DmiService {
 
   constructor() {
-    this.initializeDB();
+    //this.initializeDB();
   }
 
   initializeDB() {

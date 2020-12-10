@@ -1,5 +1,6 @@
-//import HtmlService from "./HtmlService.js";
-//import TodoService from "./ImcService.js";
+import HtmlService from "./HtmlService.js";
+import TodoService from "./DmiService.js";
+import DmiService from "./DmiService.js";
 
 class App {
   constructor() {
@@ -8,7 +9,7 @@ class App {
   }
   
   initialize() {
-    //new HtmlService(new TodoService());
+    new HtmlService(new DmiService());
   }
 
   registerServiceWorker() {
