@@ -3,7 +3,8 @@ const dataItemId = "data-item-id";
 
 export default class HtmlService {
     
-  constructor(){
+  constructor(bmiService){
+    this.bmiService = bmiService; 
     this.bindFormEvent();
   }
 
@@ -40,7 +41,14 @@ export default class HtmlService {
     
       let list = document.getElementById("listAll");    
       list.insertAdjacentHTML("afterend",listAll);
-    })    
-    
+
+      this.addBMI(date, height, weight, bmi.value, status.value);
+    })
   }
+
+  async addBMI(date, height, weight, bmiValue, status){
+    const bmi = {date, height, weight, bmiValue, status};
+    const bmiId = await this.bmiService.save(bmi);
+  }
+
 }

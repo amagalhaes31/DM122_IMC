@@ -1,6 +1,5 @@
 import HtmlService from "./HtmlService.js";
-import TodoService from "./DmiService.js";
-import DmiService from "./DmiService.js";
+import BmiService from "./BmiService.js";
 
 class App {
   constructor() {
@@ -9,7 +8,7 @@ class App {
   }
   
   initialize() {
-    new HtmlService(new DmiService());
+    new HtmlService(new BmiService());
   }
 
   registerServiceWorker() {
