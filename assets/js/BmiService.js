@@ -16,19 +16,14 @@ export default class DmiService {
       bmiControl: "++id",
     });
 
-    // db.on("populate", async () => {
-            
-    //   // await db.bmiControl.bulkPut([
-    //   //     { date: "2020/12/10", height: 180, weght: 80, bmiValue: 24.69, status: "Normal Weight" },
-    //   // ]);
-
-    // });
-
     db.open();
   }
     
   save(bmiControl) {
     return db.bmiControl.put(bmiControl);
   }
-  
+
+  getAll() {
+    return db.bmiControl.toArray();
+  }
 }

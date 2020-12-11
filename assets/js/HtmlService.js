@@ -6,6 +6,7 @@ export default class HtmlService {
   constructor(bmiService){
     this.bmiService = bmiService; 
     this.bindFormEvent();
+    this.listAllDmi();
   }
 
   bindFormEvent() {
@@ -30,25 +31,34 @@ export default class HtmlService {
       else if(bmi.value >= 24.90 & bmi.value < 29.90)
         status.value = "Overweight";
       else
-        status.value = "Obesity";
-      
-      let listAll =  `<td>${date}</td>
-                      <td>${height}</td>
-                      <td>${weight}</td>
-                      <td>${bmi.value}</td>
-                      <td>${status.value}</td>
-                      `
-    
-      let list = document.getElementById("listAll");    
-      list.insertAdjacentHTML("afterend",listAll);
-
+        status.value = "Obesity";            
+        
       this.addBMI(date, height, weight, bmi.value, status.value);
+
     })
+
   }
 
   async addBMI(date, height, weight, bmiValue, status){
     const bmi = {date, height, weight, bmiValue, status};
     const bmiId = await this.bmiService.save(bmi);
+    this.addToHtmlList(bmi);
+  }
+
+  async listAllDmi() {
+    const bmi = await this.bmiService.getAll();
+    bmi.forEach(bmiList => this.addToHtmlList(bmiList));
+  }
+
+  addToHtmlList(bmiList) {
+    let listAll =  `<td>${bmiList.date}</td>
+                    <td>${bmiList.height}</td>
+                    <td>${bmiList.weight}</td>
+                    <td>${bmiList.bmiValue}</td>
+                    <td>${bmiList.status}</td>                 
+                    `
+    let list = document.getElementById("listAll");  
+    list.insertAdjacentHTML("afterend", listAll);  
   }
 
 }
