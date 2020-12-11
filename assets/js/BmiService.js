@@ -2,7 +2,7 @@ import Dexie from "https://cdn.jsdelivr.net/npm/dexie@3.0.3/dist/dexie.mjs";
 
 let db;
 
-export default class DmiService {
+export default class BmiService {
 
   constructor() {
     this.initializeDB();

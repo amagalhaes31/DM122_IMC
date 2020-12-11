@@ -11,7 +11,7 @@ const assetsToCache = [
   './assets/css/style.css',
   './assets/js/app.js',
   './assets/js/HtmlService.js',
-  './assets/js/ImcService.js',
+  './assets/js/BmiService.js',
   './manifest.json',
   './favicon.ico',
   './index.html',
