@@ -1,5 +1,3 @@
-const doneCssClass = "done";
-const dataItemId = "data-item-id";
 
 export default class HtmlService {
     
@@ -24,19 +22,10 @@ export default class HtmlService {
       let bmi = document.getElementById("bmi");
       bmi.value = ((weight / (height * height)) * 10000).toFixed(2);
       
-      if(bmi.value < 18.50)
-        status.value = "Underweight";
-      else if(bmi.value >= 18.50 & bmi.value < 24.90)
-        status.value = "Normal Weight";
-      else if(bmi.value >= 24.90 & bmi.value < 29.90)
-        status.value = "Overweight";
-      else
-        status.value = "Obesity";            
+      status.value = BmiCalculate(bmi.value);
         
       this.addBMI(date, height, weight, bmi.value, status.value);
-
     })
-
   }
 
   async addBMI(date, height, weight, bmiValue, status){
@@ -60,5 +49,15 @@ export default class HtmlService {
     let list = document.getElementById("listAll");  
     list.insertAdjacentHTML("afterend", listAll);  
   }
+}
 
+function BmiCalculate(bmiValue) {    
+  if(bmiValue < 18.50)
+    return "Underweight";
+  else if(bmiValue >= 18.50 & bmiValue < 24.90)
+    return "Normal Weight";
+  else if(bmiValue >= 24.90 & bmiValue < 29.90)
+    return "Overweight";
+  else
+    return "Obesity"; 
 }
