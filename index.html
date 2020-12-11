@@ -6,7 +6,7 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BMI</title>
+  <title>BMI Control</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
@@ -24,9 +24,9 @@
           <span class="mdl-layout-title">BMI Control</span>
         </div>
       </header>
-      <div class="mdl-layout__drawer">
+      <!-- <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">BMI Control</span>
-      </div>
+      </div> -->
       <main class="mdl-layout__content mat-typography" style="text-align: center">
         <form>       
           <label for="date">Date</label>
@@ -36,18 +36,18 @@
           <label for="weight">Weight</label>
           <input type="number" id="weight" placeholder="value in kg">          
           <label for="bmi">BMI</label>
-          <input type="number" id="bmi" disabled>          
+          <input type="number" id="bmi"  placeholder="0" disabled>          
           <label for="status">Status</label>
-          <input type="text" id="status" disabled>  
+          <input type="text" id="status"  placeholder="none" disabled>  
           <button class="bmi-button">Calculate</button>  
       </form>  
       <table class="table">
           <tr>
-              <th style="width: 10rem;">Date</th>
-              <th style="width: 10rem;">Height[cm]</th>
-              <th style="width: 10rem;">Weight[kg]</th>
-              <th style="width: 10rem;">BMI</th>
-              <th style="width: 10rem;">Status</th>
+              <th>Date</th>
+              <th>Height[cm]</th>
+              <th>Weight[kg]</th>
+              <th>BMI</th>
+              <th>Status</th>
           </tr>
           <tr id="listAll"></tr>
       </table>

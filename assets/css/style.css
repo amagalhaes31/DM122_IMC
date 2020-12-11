@@ -13,31 +13,24 @@ input {
   font-size: 1.4em;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-li {
-  padding: 20px;
-  border-bottom: solid 1px #ddd;
-  cursor: pointer;
-  display: flex;
-}
-
-li > span {
-  flex: 1;
-  text-align: left;
-}
-
-li > button {
-  background: none;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
+button {
+  border:1px solid #1c056f;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Verdana;
+  font-weight:bold;
+  margin-top: 1rem;
+  font-size:13px;
+  padding:6px 10px;
+  text-decoration:none;
 }
 
 .done > span {
   text-decoration: line-through;
+}
+
+th {
+  margin: 10rem;
+  width: 10rem;
 }
