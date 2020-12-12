@@ -1,6 +1,6 @@
 {
   "name": "PWA - BMI Control",
-  "short_name": "PWA - Todo",
+  "short_name": "PWA - BMI",
   "theme_color": "#3f51b5",
   "background_color": "#fff",
   "display": "standalone",
