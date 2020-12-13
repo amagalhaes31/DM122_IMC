@@ -26,4 +26,13 @@ export default class BmiService {
   getAll() {
     return db.bmiControl.toArray();
   }
+
+  get(id) {
+    return db.bmiControl.get(id);
+  }
+
+  delete(id) {
+    return db.bmiControl.delete(id);
+  }
+  
 }

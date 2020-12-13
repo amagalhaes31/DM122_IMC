@@ -22,8 +22,10 @@ export default class HtmlService {
       let bmi = document.getElementById("bmi");
       bmi.value = ((weight / (height * height)) * 10000).toFixed(2);
       
+      // Calculate the BMI status
       status.value = BmiCalculate(bmi.value);
-        
+      
+      // Add to the database  
       this.addBMI(date, height, weight, bmi.value, status.value);
     })
   }
@@ -31,6 +33,7 @@ export default class HtmlService {
   async addBMI(date, height, weight, bmiValue, status){
     const bmi = {date, height, weight, bmiValue, status};
     const bmiId = await this.bmiService.save(bmi);
+    bmi.id = bmiId;
     this.addToHtmlList(bmi);
   }
 
